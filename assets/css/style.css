@@ -1,0 +1,31 @@
+body {
+    margin: 0px;
+}
+
+nav {
+    padding: 15px 20px;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.navigation_container {
+    background-color: #218380;
+    height: 50px;
+}
+
+#leaderboard {
+    color: #ffffff;
+    font-family: Verdana;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+#time {
+    color: #ffffff;
+    float: right;
+    font-family: Verdana;
+    font-size: 16px;
+}
