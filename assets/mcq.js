@@ -94,8 +94,7 @@ function checkAnswer(e) {
                 runningQuestionIndex =+ 1;
                 renderQuestion();
             };
-            
-            unshowdiv();
+
             setTimeout(unshowdiv, 1000);
 
         }
