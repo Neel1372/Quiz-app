@@ -4,9 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/mcq.css">
     <title>Document</title>
 </head>
 <body>
+    <!--Header Section--> 
+    <header>
+        <div class="container">
+            <div class="navigation_container">
+                <nav>
+                    <a id=leaderboard href="./highscore.html">View Highscores <i class="fas fa-hand-point-left fa-lg"></i></a>
+                    <p id="time">Time:</p>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!--Main Section-->
+    <main>
+        <!--id load to create event to load page when redirect to mcq page by clicking on 'start quiz'.-->
+        <div id="load">
+            <div class="mcq_container">
+                <div id="quiz">
+                    <div id="question_container">Question</div>
+                    <div id="option1_container" onclick="checkAnswer(event)">A</div>
+                    <div id="option2_container" onclick="checkAnswer(event)">B</div>
+                    <div id="option3_container" onclick="checkAnswer(event)">C</div>
+                    <div id="option4_container" onclick="checkAnswer(event)">D</div>
+                    <div id="horizontal_line"></div>
+                    <div id="answer_container"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
     <script src="assets/mcq.js"></script>
 </body>
 </html>
