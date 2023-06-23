@@ -43,7 +43,6 @@ const questions = [
 
 let q = questions;
 
-
 //To load page when redirect on mcq.html page
 let load = document.getElementById("load");
 document.addEventListener('DOMContentLoaded',renderQuestion());
@@ -63,15 +62,8 @@ function renderQuestion() {
 //Dispaly score when mcq is completed.
 function scoresheet() {
     const div=document.getElementById("quiz");
-    div.innerHTML = "<h1 id='alldone'>All Done!</h1> <h2 id='score'>Your final score is x.<h2> <form> <label id='ei'>Enter initials: </label> <input type='text'/><input type='submit' value='Submit' id='submit' onclick='redirectToHighscorePage()'/></form>"
+    div.innerHTML = "<h1 id='alldone'>All Done!</h1> <h2 id='score'>Your final score is x.<h2> <form> <label id='ei'>Enter initials: </label> <input type='text'/><a href='highscore.html' id='submit'>Submit</a></form>";
 };
-
-
-//Redirect to Highscore page but not working properly its redirecting tofront page of mcq.html.
-function redirectToHighscorePage() {
-    console.log("hii");
-    location.redirect('highscore.html');
-}
 
 
 //when click on option it check the Answer and give output as Correct and Incorrect.
@@ -87,6 +79,7 @@ function checkAnswer(e) {
             };
             showdiv();
 
+
             function unshowdiv() {
                 console.log("hii");
                 document.getElementById("horizontal_line").style.visibility = "hidden";
@@ -94,7 +87,6 @@ function checkAnswer(e) {
                 runningQuestionIndex =+ 1;
                 renderQuestion();
             };
-
             setTimeout(unshowdiv, 1000);
 
         }
@@ -108,6 +100,7 @@ function checkAnswer(e) {
             };
             showdiv();
 
+
             function unshowdiv() {
                 console.log("hii");
                 document.getElementById("horizontal_line").style.visibility = "hidden";
@@ -116,6 +109,7 @@ function checkAnswer(e) {
                 renderQuestion();
             };
             setTimeout(unshowdiv, 1000);
+
         }
     }
     else if (runningQuestionIndex == 1) {
@@ -137,8 +131,10 @@ function checkAnswer(e) {
                 renderQuestion();
             }
             setTimeout(unshowdiv, 1000);
+
         }
         else {
+            
             function showdiv() {
                 document.getElementById("horizontal_line").style.visibility = "visible";
                 document.getElementById("horizontal_line").innerHTML = "<hr></hr>" ;
@@ -147,6 +143,7 @@ function checkAnswer(e) {
             };
             showdiv();
 
+
             function unshowdiv() {
                 document.getElementById("horizontal_line").style.visibility = "hidden";
                 document.getElementById("answer_container").style.visibility = "hidden";
@@ -154,6 +151,7 @@ function checkAnswer(e) {
                 renderQuestion();
             }
             setTimeout(unshowdiv, 1000);
+
         }
     }
     else if(runningQuestionIndex == 2) {
@@ -175,8 +173,10 @@ function checkAnswer(e) {
                 renderQuestion();
             }
             setTimeout(unshowdiv, 1000);
+
         }
         else {
+
             function showdiv() {
                 document.getElementById("horizontal_line").style.visibility = "visible";
                 document.getElementById("horizontal_line").innerHTML = "<hr></hr>" ;
@@ -185,6 +185,7 @@ function checkAnswer(e) {
             };
             showdiv();
 
+
             function unshowdiv() {
                 document.getElementById("horizontal_line").style.visibility = "hidden";
                 document.getElementById("answer_container").style.visibility = "hidden";
@@ -192,6 +193,7 @@ function checkAnswer(e) {
                 renderQuestion();
             }
             setTimeout(unshowdiv, 1000);
+
         }
     }
     else if (runningQuestionIndex == 3) {
@@ -213,8 +215,10 @@ function checkAnswer(e) {
                 renderQuestion();
             }
             setTimeout(unshowdiv, 1000);
+
         }
         else {
+
             function showdiv() {
                 document.getElementById("horizontal_line").style.visibility = "visible";
                 document.getElementById("horizontal_line").innerHTML = "<hr></hr>" ;
@@ -223,6 +227,7 @@ function checkAnswer(e) {
             };
             showdiv();
 
+
             function unshowdiv() {
                 document.getElementById("horizontal_line").style.visibility = "hidden";
                 document.getElementById("answer_container").style.visibility = "hidden";
@@ -230,6 +235,7 @@ function checkAnswer(e) {
                 renderQuestion();
             }
             setTimeout(unshowdiv, 1000);
+
         }
     }
     else if (runningQuestionIndex == 4) {
@@ -251,8 +257,10 @@ function checkAnswer(e) {
                 scoresheet();
             }
             setTimeout(unshowdiv, 1000);
+            
         }
         else {
+
             function showdiv() {
                 document.getElementById("horizontal_line").style.visibility = "visible";
                 document.getElementById("horizontal_line").innerHTML = "<hr></hr>" ;
@@ -261,6 +269,7 @@ function checkAnswer(e) {
             };
             showdiv();
 
+
             function unshowdiv() {
                 document.getElementById("horizontal_line").style.visibility = "hidden";
                 document.getElementById("answer_container").style.visibility = "hidden";
@@ -268,6 +277,7 @@ function checkAnswer(e) {
                 scoresheet();
             }
             setTimeout(unshowdiv, 1000);
+
         }
     }
 }
