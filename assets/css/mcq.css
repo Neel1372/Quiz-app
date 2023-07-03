@@ -99,3 +99,19 @@
 #alldone {
     font-size: 24px;
 }
+
+#countdown {
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    font-size: 16px;
+    font-family: Verdana;
+}
+
+.time_container {
+    display: flex;
+}
+
+#time {
+    padding-right: 5px;
+}

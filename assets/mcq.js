@@ -41,6 +41,38 @@ const questions = [
     },
   ];
 
+  //Initiate Score Value as 0 if correct increment by 5 and if incorrect decrement by 2.
+var Score = 0;
+
+//Initiate time by 50 sec.
+let time = 50;
+const countdownEl = document.getElementById('countdown');
+const myInterval = setInterval(updateCountdown, 1000);
+
+
+//Time countdown function.
+function updateCountdown() {
+    countdownEl.innerHTML = time;
+    
+    if(time<=0) {
+        if(time<0) {
+            countdownEl.innerHTML=0;
+        }
+
+        //After completion of 50 sec it will redirect to score dispaly.
+        scoresheet();
+        //To stop the function
+        return;
+    }
+    time--;
+}
+
+
+//To stop time after completeion of quiz.
+function myStopFunction() {
+    clearInterval(myInterval);
+  }
+
 let q = questions;
 
 //To load page when redirect on mcq.html page
@@ -59,10 +91,13 @@ function renderQuestion() {
 }
 
 
+
+
 //Dispaly score when mcq is completed.
 function scoresheet() {
+    myStopFunction();
     const div=document.getElementById("quiz");
-    div.innerHTML = "<h1 id='alldone'>All Done!</h1> <h2 id='score'>Your final score is x.<h2> <form> <label id='ei'>Enter initials: </label> <input type='text'/><a href='highscore.html' id='submit'>Submit</a></form>";
+    div.innerHTML = "<h1 id='alldone'>All Done!</h1> <h2 id='score'>Your final score is "+Score+".<h2> <form> <label id='ei'>Enter initials: </label> <input type='text'/><a href='highscore.html' id='submit'>Submit</a></form>";
 };
 
 
@@ -70,6 +105,8 @@ function scoresheet() {
 function checkAnswer(e) {
     if (runningQuestionIndex==0) {
         if (e.target.firstChild.data == q[runningQuestionIndex].answer) {
+            Score = Score + 5;
+
 
             function showdiv() {
                 document.getElementById("horizontal_line").style.visibility = "visible";
@@ -88,10 +125,12 @@ function checkAnswer(e) {
                 renderQuestion();
             };
             setTimeout(unshowdiv, 1000);
-
         }
         else {
+            time = time - 10;
+            Score  = Score - 2;
             
+
             function showdiv() {
                 document.getElementById("horizontal_line").style.visibility = "visible";
                 document.getElementById("horizontal_line").innerHTML = "<hr></hr>" ;
@@ -102,19 +141,19 @@ function checkAnswer(e) {
 
 
             function unshowdiv() {
-                console.log("hii");
                 document.getElementById("horizontal_line").style.visibility = "hidden";
                 document.getElementById("answer_container").style.visibility = "hidden";
                 runningQuestionIndex =+ 1;
                 renderQuestion();
             };
             setTimeout(unshowdiv, 1000);
-
         }
     }
     else if (runningQuestionIndex == 1) {
         if (e.target.firstChild.data == q[runningQuestionIndex].answer) {
+            Score = Score + 5;
             
+
             function showdiv() {
                 document.getElementById("horizontal_line").style.visibility = "visible";
                 document.getElementById("horizontal_line").innerHTML = "<hr></hr>" ;
@@ -131,10 +170,12 @@ function checkAnswer(e) {
                 renderQuestion();
             }
             setTimeout(unshowdiv, 1000);
-
         }
         else {
+            time = time - 10;
+            Score  = Score - 2;
             
+
             function showdiv() {
                 document.getElementById("horizontal_line").style.visibility = "visible";
                 document.getElementById("horizontal_line").innerHTML = "<hr></hr>" ;
@@ -151,12 +192,13 @@ function checkAnswer(e) {
                 renderQuestion();
             }
             setTimeout(unshowdiv, 1000);
-
         }
     }
     else if(runningQuestionIndex == 2) {
         if (e.target.firstChild.data == q[runningQuestionIndex].answer) {
+            Score = Score + 5;
             
+
             function showdiv() {
                 document.getElementById("horizontal_line").style.visibility = "visible";
                 document.getElementById("horizontal_line").innerHTML = "<hr></hr>" ;
@@ -173,9 +215,11 @@ function checkAnswer(e) {
                 renderQuestion();
             }
             setTimeout(unshowdiv, 1000);
-
         }
         else {
+            time = time - 10;
+            Score  = Score - 2;
+
 
             function showdiv() {
                 document.getElementById("horizontal_line").style.visibility = "visible";
@@ -193,12 +237,13 @@ function checkAnswer(e) {
                 renderQuestion();
             }
             setTimeout(unshowdiv, 1000);
-
         }
     }
     else if (runningQuestionIndex == 3) {
         if (e.target.firstChild.data == q[runningQuestionIndex].answer) {
+            Score = Score + 5;
             
+
             function showdiv() {
                 document.getElementById("horizontal_line").style.visibility = "visible";
                 document.getElementById("horizontal_line").innerHTML = "<hr></hr>" ;
@@ -215,9 +260,11 @@ function checkAnswer(e) {
                 renderQuestion();
             }
             setTimeout(unshowdiv, 1000);
-
         }
         else {
+            time = time - 10;
+            Score  = Score - 2;
+
 
             function showdiv() {
                 document.getElementById("horizontal_line").style.visibility = "visible";
@@ -235,12 +282,13 @@ function checkAnswer(e) {
                 renderQuestion();
             }
             setTimeout(unshowdiv, 1000);
-
         }
     }
     else if (runningQuestionIndex == 4) {
         if (e.target.firstChild.data == q[runningQuestionIndex].answer) {
+            Score = Score + 5;
             
+
             function showdiv() {
                 document.getElementById("horizontal_line").style.visibility = "visible";
                 document.getElementById("horizontal_line").innerHTML = "<hr></hr>" ;
@@ -254,13 +302,15 @@ function checkAnswer(e) {
                 document.getElementById("horizontal_line").style.visibility = "hidden";
                 document.getElementById("answer_container").style.visibility = "hidden";
                 runningQuestionIndex = runningQuestionIndex + 1;
-                scoresheet();
+                setTimeout(scoresheet, 1000);
             }
             setTimeout(unshowdiv, 1000);
-            
         }
         else {
+            time = time - 10;
+            Score  = Score - 2;
 
+            
             function showdiv() {
                 document.getElementById("horizontal_line").style.visibility = "visible";
                 document.getElementById("horizontal_line").innerHTML = "<hr></hr>" ;
@@ -277,7 +327,6 @@ function checkAnswer(e) {
                 scoresheet();
             }
             setTimeout(unshowdiv, 1000);
-
         }
     }
 }
