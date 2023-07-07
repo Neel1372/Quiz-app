@@ -1,0 +1,65 @@
+.scores_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 10px 3px #ccc;
+    border-radius: 21px;
+
+    height: 400px;
+    width: 500px;
+
+    margin-left: 400px;
+    margin-top: 100px;
+}
+
+.scores_container {
+    display: flex;
+    justify-content: center;
+}
+
+#highscore_text {
+    padding-left: 30px;
+    font-weight: bold;
+    size: 24px;
+    font-family: Verdana;
+}
+
+#scoreList {
+    size: 16px;
+    font-family: Verdana;
+
+    padding-left: 30px;
+}
+
+#button_container {
+    display: flex;
+    flex-direction: row;
+    padding-left: 30px;
+}
+
+#goback_container {
+    background-color:  #218380;
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+
+#go_back {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-family: verdana;
+}
+
+#clear {
+    color: white;
+    font-size: 16px;
+    font-family: verdana;
+}

@@ -97,7 +97,7 @@ function renderQuestion() {
 function scoresheet() {
     myStopFunction();
     const div=document.getElementById("quiz");
-    div.innerHTML = "<h1 id='alldone'>All Done!</h1> <h2 id='score'>Your final score is "+Score+".<h2> <form> <label id='ei'>Enter initials: </label> <input type='text'/><a href='highscore.html' id='submit'>Submit</a></form>";
+    div.innerHTML = "<h1 id='alldone'>All Done!</h1> <h2 id='score'>Your final score is <h2 id='Opscore'>"+Score+"</h2>.<h2> <form> <label id='ei'>Enter initials: </label> <input type='text' id='inputInitial'/><button type='button' id='submit' onClick='handleSubmit()'>Submit</button></form>";
 };
 
 
@@ -329,4 +329,10 @@ function checkAnswer(e) {
             setTimeout(unshowdiv, 1000);
         }
     }
+}
+
+function handleSubmit(){
+    var name = document.getElementById('inputInitial');
+    localStorage.setItem(name.value, Score);
+    location.replace('highscore.html');
 }
