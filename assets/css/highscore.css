@@ -7,16 +7,12 @@
     box-shadow: 5px 5px 10px 3px #ccc;
     border-radius: 21px;
 
-    height: 400px;
-    width: 500px;
-
+    height: auto;
+    width: 400px;
+    padding: 10px;
+    
     margin-left: 400px;
     margin-top: 100px;
-}
-
-.scores_container {
-    display: flex;
-    justify-content: center;
 }
 
 #highscore_text {
@@ -62,4 +58,36 @@
     color: white;
     font-size: 16px;
     font-family: verdana;
+    background-color: #218380;
+    padding: 10px 30px;
+    border-radius: 4px;
+    border: none;
+    margin-left: 10px;
 }
+
+@media only screen and (max-width: 600px) {
+    .scores_container{
+        margin-left: 60px;
+        width: 250px;
+        height: fit-content;
+        word-break: break-all;
+    }
+
+    #button_container {
+        display: flex;
+        flex-direction: column;
+        padding-left: 30px;
+        margin: 0px;
+    }
+
+    #goback_container{
+        width: 125px;
+        height: 20px;
+        margin-bottom: 10px;    
+    }
+
+    #clear{
+        margin-bottom: 10px;
+        margin-left: 0px;
+    }
+  }

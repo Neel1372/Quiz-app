@@ -122,3 +122,13 @@
     font-weight: 100;
     font-size: 16px;
 }
+
+@media only screen and (max-width: 600px) {
+    #submit{
+        margin-left: 0px;
+    }
+
+    #question_container{
+        width: 200px;
+    }
+}

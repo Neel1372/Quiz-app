@@ -58,14 +58,21 @@ p {
     font-size: 16px;
 }
 
-button {
-    margin-left: 30px;
+.start_button_container {
+    width: 150px;
     padding: 10px 30px;
-    font-size: 16px;
-    border-radius: 5px;
+    
+}
+
+#start_quiz {
     background-color: #218380;
+    color: white;
+    padding: 10px;
     border: none;
-    color: #ffffff;
+    border-radius: 4px;
+    size: 16px;
+    font-family: verdana;
+
 }
 
 #des1 {
@@ -80,3 +87,19 @@ button {
     text-decoration: none;
     color: white;
 }
+
+@media only screen and (max-width: 600px) {
+    .main_container{
+        height: 600px;
+    }
+
+    .content_container{
+        height: fit-content;
+    }
+
+    #start_quiz{
+        margin-bottom: 10px;
+    }
+
+    
+  }
